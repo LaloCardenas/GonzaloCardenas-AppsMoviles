@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MenuActivity"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="32sp"
+        android:text="Choose an option"/>
+
+    <Button
+        android:id="@+id/btnClase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clase"/>
+
+    <Button
+        android:id="@+id/btnEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ejercicio"/>
+
+</LinearLayout>

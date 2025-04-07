@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://ccardoso.multics.org")
+                .baseUrl("https://fca-flask-production-711e.up.railway.app/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

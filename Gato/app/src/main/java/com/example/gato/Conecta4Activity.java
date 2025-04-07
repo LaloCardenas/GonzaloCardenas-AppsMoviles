@@ -1,8 +1,8 @@
 package com.example.gato;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class Conecta4Activity extends AppCompatActivity {
 
     ImageView img1;
     ImageView img2;
@@ -21,10 +21,17 @@ public class MainActivity extends AppCompatActivity {
     ImageView img7;
     ImageView img8;
     ImageView img9;
+    ImageView img10;
+    ImageView img11;
+    ImageView img12;
+    ImageView img13;
+    ImageView img14;
+    ImageView img15;
+    ImageView img16;
 
     boolean playerOne;
 
-    Grid3x3 grid;
+    Grid4x4 grid;
 
     Brain brain;
 
@@ -32,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_conecta4);
 
-        grid = new Grid3x3();
+        grid = new Grid4x4();
         grid.initGrid();
 
         brain = new Brain();
@@ -75,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         img4 = findViewById(R.id.img4);
         img4.setOnClickListener(v -> {
             img4.setImageResource(brain.getIcon(playerOne));
-            grid.board[1][0] = brain.getChar(playerOne);
+            grid.board[0][3] = brain.getChar(playerOne);
             if (grid.verifyWinner(brain.getChar(playerOne))) {
                 brain.imprimeGanador(brain.getChar(playerOne), this);
             };
@@ -86,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         img5 = findViewById(R.id.img5);
         img5.setOnClickListener(v -> {
             img5.setImageResource(brain.getIcon(playerOne));
-            grid.board[1][1] = brain.getChar(playerOne);
+            grid.board[1][0] = brain.getChar(playerOne);
             if (grid.verifyWinner(brain.getChar(playerOne))) {
                 brain.imprimeGanador(brain.getChar(playerOne), this);
             };
@@ -97,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         img6 = findViewById(R.id.img6);
         img6.setOnClickListener(v -> {
             img6.setImageResource(brain.getIcon(playerOne));
-            grid.board[1][2] = brain.getChar(playerOne);
+            grid.board[1][1] = brain.getChar(playerOne);
             if (grid.verifyWinner(brain.getChar(playerOne))) {
                 brain.imprimeGanador(brain.getChar(playerOne), this);
             };
@@ -108,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         img7 = findViewById(R.id.img7);
         img7.setOnClickListener(v -> {
             img7.setImageResource(brain.getIcon(playerOne));
-            grid.board[2][0] = brain.getChar(playerOne);
+            grid.board[1][2] = brain.getChar(playerOne);
             if (grid.verifyWinner(brain.getChar(playerOne))) {
                 brain.imprimeGanador(brain.getChar(playerOne), this);
             };
@@ -119,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         img8 = findViewById(R.id.img8);
         img8.setOnClickListener(v -> {
             img8.setImageResource(brain.getIcon(playerOne));
-            grid.board[2][1] = brain.getChar(playerOne);
+            grid.board[1][3] = brain.getChar(playerOne);
             if (grid.verifyWinner(brain.getChar(playerOne))) {
                 brain.imprimeGanador(brain.getChar(playerOne), this);
             };
@@ -130,12 +137,89 @@ public class MainActivity extends AppCompatActivity {
         img9 = findViewById(R.id.img9);
         img9.setOnClickListener(v -> {
             img9.setImageResource(brain.getIcon(playerOne));
-            grid.board[2][2] = brain.getChar(playerOne);
+            grid.board[2][0] = brain.getChar(playerOne);
             if (grid.verifyWinner(brain.getChar(playerOne))) {
                 brain.imprimeGanador(brain.getChar(playerOne), this);
             };
             playerOne = !playerOne;
             img9.setClickable(false);
+        });
+
+        img10 = findViewById(R.id.img10);
+        img10.setOnClickListener(v -> {
+            img10.setImageResource(brain.getIcon(playerOne));
+            grid.board[2][1] = brain.getChar(playerOne);
+            if (grid.verifyWinner(brain.getChar(playerOne))) {
+                brain.imprimeGanador(brain.getChar(playerOne), this);
+            };
+            playerOne = !playerOne;
+            img10.setClickable(false);
+        });
+
+        img11 = findViewById(R.id.img11);
+        img11.setOnClickListener(v -> {
+            img11.setImageResource(brain.getIcon(playerOne));
+            grid.board[2][2] = brain.getChar(playerOne);
+            if (grid.verifyWinner(brain.getChar(playerOne))) {
+                brain.imprimeGanador(brain.getChar(playerOne), this);
+            };
+            playerOne = !playerOne;
+            img11.setClickable(false);
+        });
+
+        img12 = findViewById(R.id.img12);
+        img12.setOnClickListener(v -> {
+            img12.setImageResource(brain.getIcon(playerOne));
+            grid.board[2][3] = brain.getChar(playerOne);
+            if (grid.verifyWinner(brain.getChar(playerOne))) {
+                brain.imprimeGanador(brain.getChar(playerOne), this);
+            };
+            playerOne = !playerOne;
+            img12.setClickable(false);
+        });
+
+        img13 = findViewById(R.id.img13);
+        img13.setOnClickListener(v -> {
+            img13.setImageResource(brain.getIcon(playerOne));
+            grid.board[3][0] = brain.getChar(playerOne);
+            if (grid.verifyWinner(brain.getChar(playerOne))) {
+                brain.imprimeGanador(brain.getChar(playerOne), this);
+            };
+            playerOne = !playerOne;
+            img13.setClickable(false);
+        });
+
+        img14 = findViewById(R.id.img14);
+        img14.setOnClickListener(v -> {
+            img14.setImageResource(brain.getIcon(playerOne));
+            grid.board[3][1] = brain.getChar(playerOne);
+            if (grid.verifyWinner(brain.getChar(playerOne))) {
+                brain.imprimeGanador(brain.getChar(playerOne), this);
+            };
+            playerOne = !playerOne;
+            img14.setClickable(false);
+        });
+
+        img15 = findViewById(R.id.img15);
+        img15.setOnClickListener(v -> {
+            img15.setImageResource(brain.getIcon(playerOne));
+            grid.board[3][2] = brain.getChar(playerOne);
+            if (grid.verifyWinner(brain.getChar(playerOne))) {
+                brain.imprimeGanador(brain.getChar(playerOne), this);
+            };
+            playerOne = !playerOne;
+            img15.setClickable(false);
+        });
+
+        img16 = findViewById(R.id.img16);
+        img16.setOnClickListener(v -> {
+            img16.setImageResource(brain.getIcon(playerOne));
+            grid.board[3][3] = brain.getChar(playerOne);
+            if (grid.verifyWinner(brain.getChar(playerOne))) {
+                brain.imprimeGanador(brain.getChar(playerOne), this);
+            };
+            playerOne = !playerOne;
+            img16.setClickable(false);
         });
 
 
@@ -144,7 +228,5 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
     }
-
 }
