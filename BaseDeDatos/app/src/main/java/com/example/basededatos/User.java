@@ -10,10 +10,10 @@ public class User {
     @PrimaryKey
     public int uid;
 
-    @ColumnInfo(name = "first_name")
+    @ColumnInfo(name = "name")
     public String firstName;
 
-    @ColumnInfo(name = "last_name")
-    public String lastName;
+    @ColumnInfo(name = "phone")
+    public String phone;
 
 }
