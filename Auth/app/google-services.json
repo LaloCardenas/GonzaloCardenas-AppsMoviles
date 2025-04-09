@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "487549960649",
+    "project_id": "fca-01-cfd05",
+    "storage_bucket": "fca-01-cfd05.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487549960649:android:431670d708cbc1ef93a818",
+        "android_client_info": {
+          "package_name": "com.fca.exampleauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487549960649-0od35amq75f3tb7ivv724mhciblcl9nm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2MgvE2i7ooc7oB-b0afEDRPK6rLef6JU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487549960649-0od35amq75f3tb7ivv724mhciblcl9nm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
