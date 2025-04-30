@@ -2,6 +2,7 @@ package com.example.webservices;
 
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -9,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,6 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     TextView txvContacts;
+    ImageView imagen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +33,16 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        Retrofit retrofit = new Retrofit.Builder()
+                            .baseUrl("http://ccardoso.multics.org")
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+
         txvContacts = findViewById(R.id.txvContacts);
+        imagen = findViewById(R.id.imagen);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
 
         ContactService service  = retrofit.create(ContactService.class);
 
@@ -41,11 +51,9 @@ public class MainActivity extends AppCompatActivity {
             Response<List<Contact>> response =  contactList.execute();
             List<Contact> contacts = response.body();
             assert contacts != null;
-            String x = "";
-            for (Contact c: contacts){
-                x += c.name + " " + c.phone + "\n";
-            }
-            txvContacts.setText(x);
+            txvContacts.setText(contacts.toString());
+            //Glide.with(this).load(contacts.get(0).imagenUrl).into(imagen);
+            Picasso.get().load(contacts.get(0).imagenUrl).into(imagen);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
